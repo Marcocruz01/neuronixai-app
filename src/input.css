@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply font-inter;
+}
+
+@layer utilities {
+  @keyframes dots {
+    0%, 20% { content: "."; }
+    60% { content: ".."; }
+    80%, 100% { content: "..."; }
+  }
+
+  .typing::after {
+    content: "";
+    @apply text-gray-500 dark:text-gray-400;
+    animation: dots 1s steps(3, end) infinite;
+  }
+}
